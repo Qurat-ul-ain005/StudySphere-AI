@@ -1,0 +1,418 @@
+/* =========================================================
+   AI STUDY PLANNER
+   ========================================================= */
+
+.study-plan-page {
+    min-height: 100vh;
+    padding: 45px 20px 60px;
+    background:
+        radial-gradient(circle at top left, rgba(129, 140, 248, 0.16), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(192, 132, 252, 0.14), transparent 35%),
+        #f5f6ff;
+    box-sizing: border-box;
+}
+
+.study-plan-container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.study-plan-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.study-plan-header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 800;
+    color: #102a56;
+    letter-spacing: -1px;
+}
+
+.study-plan-header p {
+    margin: 12px 0 0;
+    font-size: 17px;
+    color: #52627a;
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.study-plan-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow:
+        0 18px 45px rgba(31, 41, 55, 0.10),
+        0 4px 12px rgba(31, 41, 55, 0.05);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* =========================================================
+   FORM GROUPS
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group>label {
+    display: block;
+    margin-bottom: 10px;
+    color: #172b4d;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid #d5ddeb;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #172b4d;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #8a96a8;
+}
+
+.form-group input:focus {
+    border-color: #8b7cf6;
+    box-shadow: 0 0 0 4px rgba(139, 124, 246, 0.12);
+}
+
+/* =========================================================
+   DOCUMENT SELECTION
+   ========================================================= */
+
+.document-selection {
+    margin-top: 8px;
+}
+
+.selection-help {
+    margin: 0 0 14px;
+    color: #68758a;
+    font-size: 14px;
+}
+
+.document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.document-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+.document-list::-webkit-scrollbar-track {
+    background: #f1f3f8;
+    border-radius: 10px;
+}
+
+.document-list::-webkit-scrollbar-thumb {
+    background: #b8b0f5;
+    border-radius: 10px;
+}
+
+.document-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 17px;
+    border: 1px solid #dce2ee;
+    border-radius: 14px;
+    background: #fbfcff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.document-option:hover {
+    border-color: #9a8df4;
+    background: #f8f6ff;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.08);
+}
+
+.document-option.selected {
+    border-color: #8b7cf6;
+    background: linear-gradient(135deg,
+            #f5f2ff,
+            #faf8ff);
+    box-shadow: 0 5px 16px rgba(139, 124, 246, 0.13);
+}
+
+.document-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.document-left input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #7c6cf2;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.document-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #f0edff;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.document-name {
+    color: #263957;
+    font-size: 15px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.selected-badge {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #e9e5ff;
+    color: #6556d8;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.selected-count {
+    margin: 12px 0 0;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.form-group>p {
+    margin: 0;
+    padding: 15px 16px;
+    border-radius: 12px;
+    background: #f7f8fc;
+    color: #667085;
+    border: 1px solid #e2e6ef;
+}
+
+/* =========================================================
+   NO DOCUMENTS WARNING
+   ========================================================= */
+
+.document-warning {
+    padding: 18px;
+    border-radius: 14px;
+    background: #fff8ed;
+    border: 1px solid #f2d39b;
+}
+
+.document-warning p {
+    margin: 0 0 14px;
+    color: #805b20;
+    font-size: 14px;
+}
+
+.document-warning button {
+    border: none;
+    border-radius: 9px;
+    padding: 10px 16px;
+    background: #7c6cf2;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.document-warning button:hover {
+    background: #6b5ce7;
+}
+
+/* =========================================================
+   GENERATE BUTTON
+   ========================================================= */
+
+.generate-btn {
+    width: 100%;
+    height: 52px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg,
+            #8b82ee,
+            #ad7bea);
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 7px 18px rgba(139, 124, 246, 0.22);
+    transition: all 0.2s ease;
+}
+
+.generate-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(139, 124, 246, 0.30);
+}
+
+.generate-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.generate-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   ERROR / MESSAGE
+   ========================================================= */
+
+.error-message {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #fff0f0;
+    border: 1px solid #ffcaca;
+    color: #c62828;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   STUDY PLAN RESULT
+   ========================================================= */
+
+.plan-result {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 18px;
+    background: #fbfaff;
+    border: 1px solid #e4defb;
+}
+
+.plan-result h2 {
+    margin: 0 0 20px;
+    color: #172b4d;
+    font-size: 23px;
+}
+
+.plan-content {
+    color: #374151;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.plan-content h1,
+.plan-content h2,
+.plan-content h3 {
+    color: #273b62;
+    margin-top: 22px;
+}
+
+.plan-content h1:first-child,
+.plan-content h2:first-child,
+.plan-content h3:first-child {
+    margin-top: 0;
+}
+
+.plan-content ul,
+.plan-content ol {
+    padding-left: 24px;
+}
+
+.plan-content li {
+    margin-bottom: 7px;
+}
+
+.plan-content strong {
+    color: #4f46a5;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-btn {
+    margin-top: 24px;
+    padding: 11px 18px;
+    border: 1px solid #ccd5e4;
+    border-radius: 10px;
+    background: white;
+    color: #29405f;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #f5f6fa;
+    border-color: #9ba9bd;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .study-plan-page {
+        padding: 25px 12px 40px;
+    }
+
+    .study-plan-header h1 {
+        font-size: 32px;
+    }
+
+    .study-plan-header p {
+        font-size: 15px;
+    }
+
+    .study-plan-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .document-option {
+        padding: 12px;
+    }
+
+    .selected-badge {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .document-name {
+        max-width: 180px;
+    }
+}

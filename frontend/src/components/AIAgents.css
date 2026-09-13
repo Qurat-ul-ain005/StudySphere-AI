@@ -1,0 +1,76 @@
+.agents {
+
+    padding: 80px 8%;
+    background: #f8fafc;
+
+}
+
+
+.agents h2 {
+
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #0f172a;
+
+}
+
+
+
+.agent-container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+
+
+.agent-card {
+
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+
+}
+
+
+
+.agent-card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+
+
+.agent-card h3 {
+
+    color: #2563eb;
+    margin-bottom: 15px;
+
+}
+
+
+
+.agent-card p {
+
+    color: #475569;
+    line-height: 1.6;
+
+}
+
+
+
+@media(max-width:900px) {
+
+    .agent-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

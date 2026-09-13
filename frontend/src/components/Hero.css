@@ -1,0 +1,53 @@
+.hero {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+.hero-buttons {
+    margin-top: 40px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #0f172a;
+}
+
+/* Add these lines at the END of the file */
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
