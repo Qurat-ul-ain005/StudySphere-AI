@@ -1,0 +1,19 @@
+STUDYSPHERE AI — SCREENSHOT CAPTIONS
+
+Figure 1: StudySphere AI Home Page
+The home page provides an introduction to StudySphere AI and presents the platform as a multi-agent learning assistant for students.
+
+Figure 2: StudySphere AI Student Dashboard
+The dashboard provides an overview of the student's learning activity, uploaded study materials, generated content, recommendations, and learning progress.
+
+Figure 3: Recent AI Learning Activity
+This section displays the student's recent AI-generated learning activities and provides quick access to recently used learning features.
+
+Figure 4: AI Quiz Generator
+The AI Quiz Generator creates interactive quizzes from uploaded study materials, allowing students to test their understanding and track their performance.
+
+Figure 5: AI Flashcards Generator
+The AI Flashcards feature generates revision flashcards from study materials to support active recall and efficient learning.
+
+Figure 6: AI Study Planner
+The AI Study Planner generates a personalized study schedule based on the selected study materials, subject, examination date, and available daily study hours.
